@@ -17,6 +17,7 @@ body {
   display: flex;
   width: 100%;
   height: 100%;
+  flex-wrap: wrap; /* Allow items to wrap for small screens */
 }
 
 .left-side,
@@ -24,40 +25,21 @@ body {
   flex: 1;
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* Aligns the content of both sides to the top */
-  /* padding: 20px; */
+  align-items: flex-start;
 }
 
 .right-side {
-  /* background-color: #342c9f; */
   display: flex;
-  flex-direction: column; /* Stack children vertically */
+  flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
   height: 100%;
-  /* padding: 20px; */
-}
-
-.back-button {
-  width: 70px;
-  position: absolute;
-  bottom: 10px;
-  right: 20px;
-  color: #ffff;
-  border-color: #f4f4f4;
-  border-style: solid;
-  background-color: inherit;
-  border-radius: 4px;
-  padding: 5px 10px;
-  z-index: 2;
 }
 
 .right-side img {
   width: 100%;
-  height: 100%;
-  object-fit: fill;
-  z-index: 1;
-  /* border-radius: 8px; */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover;
 }
 
 .left-side {
@@ -72,26 +54,24 @@ body {
 }
 
 .left-side h1 {
-  display: flex;
   font-weight: bold;
   font-size: 32px;
   margin-bottom: 20px;
-  margin-left: 40%;
   text-align: center;
 }
+
 .left-side h2 {
   margin-top: 21px;
   margin-bottom: 30px;
   font-size: 24px;
   text-align: left;
-  margin-left: 0;
 }
 
 form {
-  width: 100%; /* Full width of the container */
+  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Align the form items to the left */
+  align-items: flex-start;
 }
 
 .input-group {
@@ -100,51 +80,18 @@ form {
 }
 
 .input-group label {
-  display: flex;
   margin-bottom: 5px;
-  gap: 2px;
-  /* margin-bottom: 15px; */
 }
-/* .lb2 {
-  position: relative;
-  left: 100%;
-  bottom: 54px;
-} */
+
 .input-group input {
   width: 100%;
-  padding: 5px;
+  padding: 10px;
   border: 1px solid #e8e2ff;
   border-radius: 4px;
   font-size: 16px;
   background-color: #e8e2ff;
 }
 
-.it2 {
-  position: relative;
-  left: 100%;
-  bottom: 54px;
-}
-.em1 {
-  position: relative;
-  bottom: 30px;
-}
-.em2 {
-  position: relative;
-  bottom: 30px;
-  max-width: 100%;
-}
-.ps1 {
-  position: relative;
-  bottom: 20px;
-}
-.ps2 {
-  position: relative;
-  bottom: 20px;
-}
-.bt1 {
-  position: relative;
-  bottom: 10px;
-}
 button {
   width: 100%;
   padding: 12px;
@@ -156,18 +103,15 @@ button {
   cursor: pointer;
   margin-top: 15px;
 }
-.txt {
-  position: relative;
-  left: 50px;
-}
 
-/* button:hover {
-    background-color: #1cbb63;
-  } */
+button:hover {
+  background-color: #342c9f;
+  transform: scale(1.02);
+}
 
 .register-link {
   margin-top: 15px;
-  text-align: left; /* Left align the register link */
+  text-align: left;
 }
 
 .register-link a {
@@ -178,25 +122,21 @@ button {
 .register-link a:hover {
   text-decoration: underline;
 }
-/* Styling the <a> tag to look like a button */
+
 .register-link a.button {
   display: inline-block;
-  /* padding: 12px; */
   background-color: #007bff;
   color: white;
   text-align: center;
-  border: none;
   border-radius: 4px;
   font-size: 16px;
   cursor: pointer;
   text-decoration: none;
   width: 100%;
-  box-sizing: border-box;
 }
 
 .register-link a.button:hover {
-  background-color: #0056b3; /* Darker blue on hover */
-  text-decoration: none;
+  background-color: #0056b3;
 }
 
 /* Media Query for smaller screens */
@@ -208,19 +148,13 @@ button {
 
   .left-side,
   .right-side {
-    /* width: 100%; */
-    /* padding: 15px; */
+    padding: 20px;
+    width: 100%;
   }
 
-  .right-side {
-    max-height: 100px;
-    box-shadow: none;
-    /* padding: 20px; */
-  }
-
-  .right-side h2 {
-    font-size: 20px;
-    margin-bottom: 15px;
+  .left-side h1 {
+    font-size: 24px;
+    text-align: center;
   }
 
   .input-group input {
@@ -229,6 +163,29 @@ button {
 
   button {
     font-size: 14px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 500px) {
+  .left-side,
+  .right-side {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .input-group input {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 8px;
   }
 }
 
@@ -241,32 +198,6 @@ button {
   }
 }
 
-@keyframes fadeOut {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-
 .fade-in {
   animation: fadeIn 0.5s ease-in forwards;
-}
-
-.fade-out {
-  animation: fadeOut 0.5s ease-out forwards;
-}
-
-.div1 {
-  display: flex;
-  justify-content: space-between;
-}
-
-.inputs {
-  margin-bottom: 15px;
-}
-
-.inner-container {
-  width: 100%;
 }
