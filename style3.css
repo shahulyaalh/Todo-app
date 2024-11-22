@@ -1,0 +1,265 @@
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #f2f2f2, #e0e7ff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+    padding-top: 50px;
+}
+
+.nav-head {
+    margin-top: 30px;
+}
+
+.nav-list {
+    width: 60%;
+    margin-top: 30px;
+    background-color: #ffffff;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    padding: 9px;
+    gap: 20px;
+}
+
+.nav-list ul {
+    padding: 8px;
+    list-style-type: none;
+    gap: 30px;
+}
+
+.nav-list li {
+    padding: 6px;
+}
+
+.nav-list li a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+.offcanvas {
+    background-color: rgb(227, 162, 11);
+}
+
+.bottom-btn {
+    display: flex;
+    flex-direction: column;
+}
+
+.bottom-btn li {
+    display: flex;
+    padding: 7px;
+}
+
+.bottom-btn li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Sticky Notes Grid */
+.sticky-wall {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 5px;
+    padding: 50px;
+    justify-content: center;
+}
+
+.sticky-note {
+    width: 17rem;
+    height: 17rem;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: #333;
+    transition: transform 0.2s;
+    cursor: pointer;
+}
+
+.completed-button {
+    margin-top: auto;
+    margin-left: auto;
+    width: 40px; /* Make width equal to height for a perfect circle */
+    height: 60px; /* Set height for the circular shape */
+    color: white;
+    border: none;
+    border-radius: 60%; /* Fully round shape */
+    font-size: 16px; /* Slightly larger text */
+    font-weight: bold; /* Bold for emphasis */
+    text-align: center; /* Center text */
+    cursor: pointer;
+    position: relative; /* For pseudo-elements */
+    background: rgba(255, 255, 255, 0.1); /* Transparent blurred background */
+    backdrop-filter: blur(10px); /* Blur effect */
+    overflow: hidden;
+    transition: all 0.3s ease;
+
+    /* Subtle border for design consistency */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    /* Shadow for depth */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.completed-button:hover {
+    background: rgba(255, 255, 255, 0.2); /* Slightly increase opacity on hover */
+    color: white; /* Ensure text stays visible */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+    /* transform: scale(1.1); Slight enlargement on hover */
+}
+
+.completed-button:active {
+    background: rgba(255, 255, 255, 0.3); /* Darker blurred effect */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+    transform: scale(0.95); /* Shrink effect on click */
+}
+
+/* Checkmark Effect for Completed State */
+.completed-button::after {
+    content: 'ok'; /* Unicode checkmark */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px; /* Adjust size of the checkmark */
+    color: white; /* Match text color */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease;
+}
+
+.completed-button.checked {
+    background: rgba(40, 167, 69, 0.5); /* Greenish background for completed state */
+    border: 1px solid rgba(40, 167, 69, 0.8); /* Border matches the completed state */
+}
+
+.completed-button.checked::after {
+    opacity: 1; /* Show the checkmark when in "checked" state */
+}
+
+
+.done-button {
+   margin-bottom: 4px;
+   width: 70px;
+   height: 50px;
+    /* padding: 8px 12px; */
+    color: grey; /* Text color as grey */
+    border: none;
+    border-radius: 12px; /* Softer rounded corners */
+    font-size: 16px; /* Easy-to-read font size */
+    font-weight: bold;
+    justify-content: flex-start; /* Ensure text is centered */
+    cursor: pointer;
+    position: relative; /* For pseudo-elements */
+    background: rgba(255, 255, 255, 0.1); /* Transparent blurred background */
+    backdrop-filter: blur(10px); /* Blur effect */
+    overflow:hidden; 
+    transition: all 0.3s ease; /* Smooth transitions */
+
+    /* Subtle border to match blurred theme */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    /* Add soft shadow for depth */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.done-button:hover {
+    background: rgba(255, 255, 255, 0.2); /* Slightly increase opacity on hover */
+    color: white; /* Change text color for better visibility */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05); /* Slight hover enlargement */
+}
+
+.done-button:active {
+    background: rgba(255, 255, 255, 0.3); /* Darker blurred effect on click */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+    transform: scale(0.98); /* Click shrink effect */
+}
+
+/* Optional Gradient Effect for Hover */
+.done-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+    transform: skewX(-45deg);
+    transition: all 0.3s ease;
+}
+
+.done-button:hover::before {
+    left: 150%; /* Move gradient effect on hover */
+}
+
+
+
+
+.sticky-note.yellow { background-color: #FFF9C4; }
+.sticky-note.blue { background-color: #B3E5FC; }
+.sticky-note.pink { background-color: #FFCDD2; }
+.sticky-note.orange { background-color: #FFE0B2; }
+.sticky-note.gray { background-color: #F5F5F5; }
+.sticky-note.lavender { background-color: #F8BBD0; }
+
+.sticky-note:hover {
+    transform: scale(1.05);
+}
+
+/* Add Note (Plus Sign) Styling */
+.add-note {
+    background-color: #e0e0e0; /* Light gray background */
+    color: #333;
+    font-size: 48px; /* Larger font size for the plus sign */
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+  }
+  
+  .add-note:hover {
+    transform: scale(1.1); /* Slightly larger on hover */
+    background-color: #d3d3d3; /* Darker gray on hover */
+  }
+  
+.icons-outer {
+    display: flex;
+    gap: 9px;
+}
+
+svg {
+    width: 18px;
+    height: 26px;
+}
+
+/* Style for the textarea inside each sticky note */
+.note-text {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    resize: none; /* Prevent resizing */
+    font-size: 18px;
+    background-color: transparent; /* Inherits sticky note's background */
+    padding: 10px;
+    color: #333;
+    font-family: Arial, sans-serif;
+  }
+  

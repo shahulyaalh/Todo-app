@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do Application</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Left Side Image -->
+      <div class="left-side">
+        <img
+          src="picture.jpeg"
+          alt="Login Image"
+        />
+        <button class="back-button">Back</button>
+      </div>
+      <!-- Right Side Login Form -->
+      <div class="right-side">
+        <h1>Welcome</h1>
+        <h2>Login to your account</h2>
+        <form action="/login" method="POST" class="form-items">
+          <div class="input-group">
+            <label for="username">Username</label>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              placeholder="Enter your username"
+              required
+            />
+          </div>
+          <div class="input-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Enter your password"
+              required
+            />
+          </div>
+          <button type="submit" >Login</button>
+          <!-- <div class="register-link">
+            <p>Don't have an account? <a href="/register">Register New Account</a></p>
+          </div> -->
+          <div class="register-link">
+            <p class="txt">Don't have an account?</p>
+          </div>
+          <div class="register-button-div">
+            <button
+              class="register-button"
+              onclick="window.location.href='./signup.html';"
+            >
+              Register
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script type="module" src="script.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js"></script>
+    <scrip src="https://www.gstatic.com/firebasejs/9.17.2/firebase-auth.js"></script>
+
+  </body>
+</html>
