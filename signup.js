@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Function to navigate to login page
   function navigateToLogin() {
-    window.location.href = 'login.html'; // Redirect to login page
+    window.location.href = 'index.html'; // Redirect to login page
   }
 
 });
