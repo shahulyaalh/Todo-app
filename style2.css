@@ -9,7 +9,7 @@ body {
   height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: first baseline;
   background-color: #f7f7f7;
 }
 
@@ -41,7 +41,7 @@ body {
 .back-button {
   width: 70px;
   position: absolute;
-  bottom: 10px;
+  bottom: 30px;
   right: 20px;
   color: #ffff;
   border-color: #f4f4f4;
@@ -105,12 +105,31 @@ form {
   gap: 2px;
   /* margin-bottom: 15px; */
 }
+.input-group2 {
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.input-group2 label {
+  display: flex;
+  margin-bottom: 5px;
+  gap: 2px;
+  /* margin-bottom: 15px; */
+}
 /* .lb2 {
   position: relative;
   left: 100%;
   bottom: 54px;
 } */
 .input-group input {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #e8e2ff;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: #e8e2ff;
+}
+.input-group2 input {
   width: 100%;
   padding: 5px;
   border: 1px solid #e8e2ff;
