@@ -1,6 +1,6 @@
 * {
   margin: 0;
-  padding: 0;
+ 
   box-sizing: border-box;
 }
 
@@ -41,7 +41,7 @@ body {
 .back-button {
   width: 70px;
   position: absolute;
-  bottom: 180px;
+  bottom: 280px;
   margin-bottom: 20px;
   right: 20px;
   color: #ffff;
