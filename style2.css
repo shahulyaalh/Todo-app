@@ -41,7 +41,7 @@ body {
 .back-button {
   width: 70px;
   position: absolute;
-  bottom: 160px;
+  bottom: 210px;
   right: 20px;
   color: #ffff;
   border-color: #f4f4f4;
@@ -82,7 +82,7 @@ body {
 .left-side h2 {
   margin-top: 21px;
   margin-bottom: 30px;
-  font-size: 24px;
+  font-size: 18px;
   text-align: left;
   margin-left: 0;
 }
