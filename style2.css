@@ -42,7 +42,7 @@ body {
   width: 70px;
   position: absolute;
   bottom: 280px;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   right: 20px;
   color: #ffff;
   border-color: #f4f4f4;
@@ -69,7 +69,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding: 15px;
+  padding: 19px;
 }
 
 .left-side h1 {
