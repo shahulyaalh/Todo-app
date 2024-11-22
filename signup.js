@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Redirect to the login page or dashboard
         alert('Signup successful! You can now login.');
-        window.location.href = 'login.html'; // Redirect to the login page
+        window.location.href = 'index.html'; // Redirect to the login page
       })
       .catch((error) => {
         // Handle errors
